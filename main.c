@@ -1,16 +1,41 @@
 #include <stdio.h>
+#include "tarefas.h"
 
-int main () {
-    int opcao;
-    do {
-    printf("Menu - Opções de Funções\n");
-    printf("Opção 1 - Cadastro cliente\n");
-    printf("Opção 2 - Descadastro cliente\n"); 
-    printf("Opção 3 - Altera cliente\n");
-    printf("Opção 4 - Busca cliente\n");
-    printf("Opção 0 - Sair\n");
-    printf("Escolha uma opção:\n");
-    int i = scanf("%d\n", opcao);
-    printf("Opção escolhida:\n", opcao);
-    }while(opcao != 0);
+void main(){
+    int pos = 0;
+    Tarefa tarefa[TOTAL];
+
+
+    int resp;
+    do
+    {
+        printf("\nMenu Principal: \n");
+        printf("1 - Criar Tarefa \n");
+        printf("2 - Deletar Tarefa \n");
+        printf("3 - Listar Tarefas \n");
+        printf("0 - Sair \n");
+
+        printf("Entre com uma opcao: ");
+
+        scanf("%d", &resp);
+        printf("Opcao selecionado: %d \n", resp);
+
+        switch (resp)
+        {
+        case 1:
+            Criar_tarefa(tarefa, &pos);
+            break;
+        case 2:
+            Deletar_tarefa(tarefa, &pos);
+            break;
+        case 3:
+            Listar_tarefa(tarefa, pos);
+            break;
+
+        default:
+            printf("Opcao invalida! \n");
+            break;
+        }
+    } while (resp != 0);
+    
 }
