@@ -2,7 +2,7 @@
 #include "tarefas.h"
 
 void main(){
-    int pos = 0; 
+    int posicao = 0; 
     Tarefa tarefa[TOTAL];
 
 
@@ -23,13 +23,13 @@ void main(){
         switch (resp)
         {
         case 1:
-            Criar_tarefa(tarefa, &pos);
+            Criar_tarefa(tarefa, &posicao);
             break;
         case 2:
-            Deletar_tarefa(tarefa, &pos);
+            Deletar_tarefa(tarefa, &posicao);
             break;
         case 3:
-            Listar_tarefa(tarefa, pos);
+            Listar_tarefa(tarefa, posicao);
             break;
 
         default:
