@@ -2,7 +2,7 @@
 #include "tarefas.h"
 
 void main(){
-    int pos = 0;
+    int pos = 0; 
     Tarefa tarefa[TOTAL];
 
 
